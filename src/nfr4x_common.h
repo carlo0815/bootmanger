@@ -38,7 +38,7 @@
 #define nfr4x_LCD_BPP "/proc/stb/lcd/bpp"
 #define nfr4x_KERNEL_MTD "/dev/mtd2"
 #define nfr4x_MAIN_DIR "/nfr4x"
-#define nfr4x_DATA_DIR "open-multiboot"
+#define nfr4x_DATA_DIR "NFR4XBootI"
 #define nfr4x_PLUGIN_DIR "/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot"
 #define nfr4x_SCREEN_WIDTH 1920
 #define nfr4x_SCREEN_HEIGHT 1080
