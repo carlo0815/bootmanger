@@ -36,7 +36,7 @@
 #define nfr4x_LCD_XRES "/proc/stb/lcd/xres"
 #define nfr4x_LCD_YRES "/proc/stb/lcd/yres"
 #define nfr4x_LCD_BPP "/proc/stb/lcd/bpp"
-//#define nfr4x_KERNEL_MTD "/dev/mtd2"
+#define nfr4x_KERNEL_MTD "/dev/mtd2"
 #define nfr4x_MAIN_DIR "/nfr4x"
 #define nfr4x_DATA_DIR "open-multiboot"
 #define nfr4x_PLUGIN_DIR "/usr/lib/enigma2/python/Plugins/Extensions/NFR4XBoot"
