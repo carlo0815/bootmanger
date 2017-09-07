@@ -31,7 +31,7 @@ typedef struct nfr4x_device_item
 	struct nfr4x_device_item *next;
 } nfr4x_device_item;
 
-#define nfr4x_SETTINGS_SELECTED "selected"
+#define nfr4x_SETTINGS_SELECTED "nfr4xboot"
 #define nfr4x_SETTINGS_FORCE "force"
 #define nfr4x_SETTINGS_NEXTBOOT "nextboot"
 #define nfr4x_SETTINGS_TIMER "timer"
