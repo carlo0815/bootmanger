@@ -47,7 +47,7 @@
 #define nfr4x_APP_VERION "1.0"
 #define nfr4x_DISPLAY_NAME "NFR4XBoot"
 #ifndef nfr4x_DEFAULT_TIMER
-#define nfr4x_DEFAULT_TIMER 5
+#define nfr4x_DEFAULT_TIMER 10
 #endif
 #define nfr4x_SHOWIFRAME_BIN "/usr/bin/showiframe"
 #define nfr4x_VOLATILE_MEDIA_BIN "/etc/init.d/volatile-media.sh"
@@ -70,7 +70,7 @@
 #define nfr4x_MENU_ITEM_COLOR 0xFA202020
 #endif
 #ifndef nfr4x_MENU_ITEM_SELECTED_COLOR
-#define nfr4x_MENU_ITEM_SELECTED_COLOR 0xFA404040
+#define nfr4x_MENU_ITEM_SELECTED_COLOR 0xFA336699
 #endif
 #ifndef nfr4x_MENU_ITEM_TEXT_COLOR
 #define nfr4x_MENU_ITEM_TEXT_COLOR 0xFFFFFFFF
