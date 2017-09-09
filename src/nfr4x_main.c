@@ -45,14 +45,6 @@ void nfr4x_draw_header()
 {
 	char tmp[255];
 	sprintf(tmp, "%s %s", nfr4x_DISPLAY_NAME, nfr4x_APP_VERION);
-	nfr4x_render_symbol(nfr4x_SYMBOL_LOGO,
-		nfr4x_HEADER_X,
-		nfr4x_HEADER_Y - 25,
-		400,
-		nfr4x_HEADER_COLOR,
-		nfr4x_HEADER_FONT_SIZE,
-		nfr4x_TEXT_ALIGN_LEFT);
-	
 	nfr4x_render_text(tmp,
 		nfr4x_HEADER_X + 45,
 		nfr4x_HEADER_Y,
