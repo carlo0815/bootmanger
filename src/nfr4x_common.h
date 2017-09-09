@@ -67,10 +67,10 @@
 #define nfr4x_MENU_ITEM_HEIGHT 80
 #define nfr4x_MENU_ITEM_WIDTH 900
 #ifndef nfr4x_MENU_ITEM_COLOR
-#define nfr4x_MENU_ITEM_COLOR 0xFA202020
+#define nfr4x_MENU_ITEM_COLOR 0xFA336699
 #endif
 #ifndef nfr4x_MENU_ITEM_SELECTED_COLOR
-#define nfr4x_MENU_ITEM_SELECTED_COLOR 0xFA336699
+#define nfr4x_MENU_ITEM_SELECTED_COLOR 0x00000000
 #endif
 #ifndef nfr4x_MENU_ITEM_TEXT_COLOR
 #define nfr4x_MENU_ITEM_TEXT_COLOR 0xFFFFFFFF
@@ -80,12 +80,12 @@
 #define nfr4x_MENU_BOX_RADIUS 10
 #define nfr4x_MENU_BOX_MARGIN 6
 #ifndef nfr4x_MENU_BOX_COLOR
-#define nfr4x_MENU_BOX_COLOR 0xE0202020
+#define nfr4x_MENU_BOX_COLOR 0xE0336699
 #endif
 #define nfr4x_MENU_MAX_ITEMS 8
 #define nfr4x_MENU_ARROWS_SIZE 120
 #ifndef nfr4x_MENU_ARROWS_COLOR
-#define nfr4x_MENU_ARROWS_COLOR 0xFA202020
+#define nfr4x_MENU_ARROWS_COLOR 0xFA336699
 #endif
 
 #define nfr4x_LCD_LOGO_X 0.1 // 10% of display width
