@@ -47,7 +47,7 @@ char* nfr4x_utils_read(const char *key);
 void nfr4x_utils_save_int(const char* key, int value);
 int nfr4x_utils_read_int(const char *key);
 int nfr4x_utils_check_lock_menu();
-void nfr4x_utils_build_vu_wrapper(nfr4x_device_item *item);
+void nfr4x_utils_build_platform_wrapper(nfr4x_device_item *item);
 
 void nfr4x_utils_remove_nextboot();
 int nfr4x_utils_gettimer();
@@ -56,7 +56,7 @@ void nfr4x_utils_setrctype();
 void nfr4x_utils_init_system();
 void nfr4x_utils_prepare_destination(nfr4x_device_item *item);
 void nfr4x_utils_load_modules(nfr4x_device_item *item);
-void nfr4x_utils_load_modules_vugl(nfr4x_device_item *item);
+void nfr4x_utils_load_modules_gl(nfr4x_device_item *item);
 
 void nfr4x_utils_backup_kernel(nfr4x_device_item *item);
 void nfr4x_utils_restore_kernel(nfr4x_device_item *item);
