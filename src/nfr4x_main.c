@@ -238,7 +238,7 @@ int main(int argc, char *argv[])
 				nfr4x_log(LOG_DEBUG, "%-33s: loading modules...", __FUNCTION__);
 				nfr4x_utils_load_modules(item);
 				if (!nfr4x_utils_file_exists(nfr4x_VIDEO_DEVICE)) {
-					nfr4x_utils_load_modules_vugl(item);
+					nfr4x_utils_load_modules_gl(item);
 				}
 				nfr4x_utils_setrctype();
 			}
