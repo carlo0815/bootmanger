@@ -351,20 +351,22 @@ int nfr4x_utils_read_int(const char *key)
 	return ret;
 }
 
-void nfr4x_utils_build_vu_wrapper(nfr4x_device_item *item)
+void nfr4x_utils_build_platform_wrapper(nfr4x_device_item *item)
 {
 	FILE *fp;
 	char tmp[255];
 	char cmd[512];
 	
-	sprintf(tmp, "%s/%s/%s/usr/bin/vu-util-wrapper.sh", nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
+	sprintf(tmp, "%s/%s/%s/usr/bin/platform-util-wrapper.sh", nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
  	fp = fopen(tmp,"w");
  	fprintf(fp,"%s","#!/bin/sh\n\n");
  	fprintf(fp,"%s","export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin\n");
  	fprintf(fp,"%s","/etc/init.d/vuplus-platform-util start\n");
+	fprintf(fp,"%s","/etc/init.d/platform-util start\n");
+	fprintf(fp,"%s","/etc/init.d/gigablue-platform-util start\n");
  	fclose(fp);
  	
- 	sprintf(cmd, "chmod 0755 %s/%s/%s/usr/bin/vu-util-wrapper.sh", nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
+ 	sprintf(cmd, "chmod 0755 %s/%s/%s/usr/bin/platform-util-wrapper.sh", nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
  	system(cmd);
 }
 
@@ -494,13 +496,13 @@ void nfr4x_utils_load_modules(nfr4x_device_item *item)
 /*
  **
  * by Meo.
- * The Vu+ drivers for OpenGles are loaded at the end of rcS
+ * OpenGles modules are loaded at the end of rcS
  * So we need additional stuffs and a different procedure.
  **
  */
-void nfr4x_utils_load_modules_vugl(nfr4x_device_item *item)
+void nfr4x_utils_load_modules_gl(nfr4x_device_item *item)
 {	
-	nfr4x_log(LOG_DEBUG, "%-33s: load vuplus-platform-util", __FUNCTION__);
+	nfr4x_log(LOG_DEBUG, "%-33s: load platform-util", __FUNCTION__);
 	
 	int i;
 
@@ -512,6 +514,8 @@ void nfr4x_utils_load_modules_vugl(nfr4x_device_item *item)
 		system("/etc/init.d/populate-volatile.sh start");
 		system("/etc/init.d/bootmisc.sh start");
 		system("/etc/init.d/vuplus-platform-util start");
+		system("/etc/init.d/platform-util start");
+		system("/etc/init.d/gigablue-platform-util start");		
 	}
 
 	else 
@@ -546,9 +550,9 @@ void nfr4x_utils_load_modules_vugl(nfr4x_device_item *item)
 		system(cmd);
 
 // prevent missing path in chroot
-		nfr4x_utils_build_vu_wrapper(item);
+		nfr4x_utils_build_platform_wrapper(item);
 
-		sprintf(cmd, "%s %s/%s/%s /usr/bin/vu-util-wrapper.sh", nfr4x_CHROOT_BIN, nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
+		sprintf(cmd, "%s %s/%s/%s /usr/bin/platform-util-wrapper.sh", nfr4x_CHROOT_BIN, nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
 		system(cmd);
 		
 	}
