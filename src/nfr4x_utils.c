@@ -576,6 +576,7 @@ void nfr4x_utils_backup_kernel(nfr4x_device_item *item)
 #ifdef nfr4x_DREAMBOX
 	sprintf(cmd, "%s %s -nof %s/%s/.kernels/%s.bin", nfr4x_NANDDUMP_BIN, nfr4x_KERNEL_MTD, nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
 #elif defined(nfr4x_MMCBLK)
+	nfr4x_log(LOG_DEBUG, "KERNEL_MTD:  '%s'", nfr4x_KERNEL_MTD);
 	if (nfr4x_utils_file_exists(nfr4x_PROC_STB))
 		sprintf(cmd, "%s if=%s of=%s/%s/.kernels/%s.bin", nfr4x_DD_BIN, nfr4x_KERNEL_MTD, nfr4x_MAIN_DIR, nfr4x_DATA_DIR, item->identifier);
 #else
