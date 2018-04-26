@@ -37,6 +37,12 @@
 #define nfr4x_FS_MAX 3
 static const char *nfr4x_utils_fs_types[nfr4x_FS_MAX] = { "ext4", "ext3" };
 
+int fstab_mount()
+{
+system("mount -a");
+return 0;
+}
+
 int nfr4x_utils_dir_exists(const char* folder)
 {
 	DIR *fd = opendir(folder);
