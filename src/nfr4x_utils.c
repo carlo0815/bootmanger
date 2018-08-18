@@ -201,7 +201,7 @@ nfr4x_device_item *nfr4x_utils_get_images()
 		while ((dir = readdir(fd)) != NULL) {
 			if (((strlen(dir->d_name) == 7 || strlen(dir->d_name) == 9) && memcmp(dir->d_name, "mmc", 3) == 0) || ((strlen(dir->d_name) == 3 || strlen(dir->d_name) == 4) && memcmp(dir->d_name, "sd", 2) == 0)) {
 				char device[255];
-				sprintf(base_dir, "%s/%s", datadir, dir->d_name);
+				sprintf(device, "%s/%s", OMB_DEVICES_DIR, dir->d_name);
 
 				if (!nfr4x_branding_is_compatible(base_dir)) {
 					nfr4x_log(LOG_DEBUG ,"%-33s: skipping image %s", __FUNCTION__, base_dir);
